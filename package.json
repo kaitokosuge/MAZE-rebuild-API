@@ -1,31 +1,32 @@
 {
-	"name": "maze-api",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "npx nodemon app.ts",
-		"lint": "eslint ."
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^7.16.0",
-		"@typescript-eslint/parser": "^7.16.0",
-		"express": "^4.19.2"
-	},
-	"devDependencies": {
-		"@eslint/js": "^9.6.0",
-		"@types/express": "^4.17.21",
-		"@types/node": "^20.14.10",
-		"eslint": "^9.6.0",
-		"globals": "^15.8.0",
-		"nodemon": "^3.1.4",
-		"prettier": "^3.3.2",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.5.3",
-		"typescript-eslint": "^7.16.0"
-	}
+    "name": "maze-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "npx nodemon app.ts",
+        "lint": "eslint .",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.16.0",
+        "@typescript-eslint/parser": "^7.16.0",
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.6.0",
+        "@types/express": "^4.17.21",
+        "@types/node": "^20.14.10",
+        "eslint": "^9.6.0",
+        "globals": "^15.8.0",
+        "nodemon": "^3.1.4",
+        "prettier": "^3.3.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.3",
+        "typescript-eslint": "^7.16.0"
+    }
 }
