@@ -19,7 +19,7 @@ model AdminTodayQuiz {
   id        String    @id @default(cuid())
   text      String  @db.Text
   author    User    @relation(fields: [authorId], references: [id]) 
-  authorId  String
+  authorId  String 
   choices   AdminTodayQuizChoice[]
   techCategory TechCategory[]
   otherCategory  OtherCategory[]
