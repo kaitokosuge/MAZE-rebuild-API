@@ -1,21 +1,33 @@
 import express, { Request, Response } from "express";
 
-import { createAdminTodayQuiz } from "../service/AdminTodayQuizService";
+import {
+    createAdminTodayQuiz,
+    getAdminTodayQuiz,
+} from "../service/AdminTodayQuizService";
 
 const router = express.Router();
+
+router.get("/get", async (req: Request, res: Response) => {
+    try {
+        if (typeof req.query.page !== "string") {
+            res.status(500).json(`fail get`);
+            return;
+        }
+        const response = await getAdminTodayQuiz(req.query.page);
+        // eslint-disable-next-line no-console
+        console.log("response 今日のクイズ", response);
+        res.status(201).json(response);
+    } catch (error) {
+        res.status(500).json(`fail get:${error}`);
+    }
+});
 
 router.post("/post", async (req: Request, res: Response) => {
     try {
         const response = await createAdminTodayQuiz(req.body);
-        // eslint-disable-next-line no-console
-        console.log("responseです", response);
-
-        res.status(201).json("adminTodayQuizSaved");
+        res.status(201).json(response);
     } catch (error: unknown) {
-        // eslint-disable-next-line no-console
-        console.log("エラー内容です", error);
-        res.status(500).json("fail saved");
-        // throw new Error("保存に失敗しました");
+        res.status(500).json(`fail saved:${error}`);
     }
 });
 export default router;
