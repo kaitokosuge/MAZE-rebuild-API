@@ -23,9 +23,9 @@ export const createAdminTodayQuiz = async (data: AdminTodayQuiz) => {
 
     const saveTechCategory = strArrToNumObjctArr(techCategory);
 
-    let saveotherCategory: { id: number }[] | undefined;
+    let saveOtherCategory: { id: number }[] | undefined;
     if (otherCategory) {
-        saveotherCategory = strArrToNumObjctArr(otherCategory);
+        saveOtherCategory = strArrToNumObjctArr(otherCategory);
     }
 
     const saveData = {
@@ -35,7 +35,7 @@ export const createAdminTodayQuiz = async (data: AdminTodayQuiz) => {
         showDay: showDay,
         choices: choices,
         techCategory: saveTechCategory,
-        otherCategory: saveotherCategory,
+        otherCategory: saveOtherCategory,
     };
     const savedQuiz = await save(saveData);
     return savedQuiz;

@@ -7,7 +7,7 @@ import {
 
 const router = express.Router();
 
-router.get("/get", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
     try {
         if (typeof req.query.page !== "string") {
             res.status(500).json(`fail get`);
@@ -22,7 +22,7 @@ router.get("/get", async (req: Request, res: Response) => {
     }
 });
 
-router.post("/post", async (req: Request, res: Response) => {
+router.post("/", async (req: Request, res: Response) => {
     try {
         const response = await createAdminTodayQuiz(req.body);
         res.status(201).json(response);
